@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: aplikasi-windows
-          path: Inputan nama dan sekolah.cpp.exe
+          path: main.cpp.exe
