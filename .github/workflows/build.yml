@@ -1,5 +1,4 @@
 
-
 name: Build C++ to EXE
 
 on:
@@ -23,19 +22,11 @@ jobs:
 
       - name: Compile C++ to EXE
         shell: msys2 {0}
-        run: g++ inputan_nama.cpp -o inputan_nama.exe -static
-
-      - name: Check EXE
-        shell: pwsh
-        run: |
-          if (!(Test-Path "inputan_nama.exe")) {
-            throw "File EXE tidak ditemukan!"
-          }
-          Get-Item "inputan_nama.exe"
+        run: g++ main.cpp -o main.exe -static
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: aplikasi-windows
-          path: inputan_nama.exe
+          path: main.exe
           if-no-files-found: error
