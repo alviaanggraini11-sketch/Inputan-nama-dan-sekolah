@@ -16,7 +16,7 @@ jobs:
       - name: Compile main.cpp
         shell: pwsh
         run: |
-          g++ -std=c++17 -O2 main.cpp -o main.exe
+          g++ -std=c++17 -O2 -static -static-libgcc -static-libstdc++ main.cpp -o main.exe
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
